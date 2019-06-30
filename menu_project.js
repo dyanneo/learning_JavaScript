@@ -37,6 +37,18 @@ const menu = {
       };
       this._courses[courseName].push(dish);
     },
+    getRandomDishFromCourse(courseName) {
+      const dishes = this._courses[courseName];
+      const i = Math.floor(dishes.length * Math.random());
+      return dishes[i];
+    },
+    generateRandomMeal() {
+      const appetizer = this.getRandomDishFromCourse('appetizers');
+      const main = this.getRandomDishFromCourse('mains');
+      const dessert = this.getRandomDishFromCourse('desserts');
+      const total = appetizer.price + main.price + dessert.price; 
+      return `Your meal is ${appetizer.name}, ${main.name}, ${dessert.name}, at a price of ${total}. Bon apetit!`;
+    },
 };
 menu.addDishToCourse('appetizers', 'Salad', 5.00);
 menu.addDishToCourse('appetizers', 'Shrimp cocktail', 8.00);
@@ -50,4 +62,6 @@ menu.addDishToCourse('desserts', 'Pie', 4.00);
 menu.addDishToCourse('desserts', 'Cake', 4.50);
 menu.addDishToCourse('desserts', 'Ice cream', 3.00);
 
-console.log(menu.courses);
+// console.log(menu.courses);
+
+console.log(menu.generateRandomMeal());
