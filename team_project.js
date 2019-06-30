@@ -47,7 +47,23 @@ const team = {
     };
     this.players.push(player);
   },
+  addGame(opponent, teamPoints, opponentPoints) {
+    let game = {
+        opponent: opponent,
+        teamPoints: teamPoints,
+        opponentPoints: opponentPoints,
+    };
+    this.games.push(game);
+  },
 };
 team.addPlayer('Joe', 'Namath', 75);
+team.addPlayer('Steph', 'Curry', 28);
+team.addPlayer('Lisa', 'Leslie', 44);
+team.addPlayer('Bugs', 'Bunny', 76);
+
+team.addGame('Lakers', 0, 76);
+team.addGame('Blue Jays', 100, 99);
+team.addGame('United', 3, 2);
+
 console.log(team.players);
 console.log(team.games);
