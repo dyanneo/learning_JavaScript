@@ -10,3 +10,8 @@ my code is in the menu_project.js file.
 [Link](https://www.codecademy.com/courses/introduction-to-javascript/projects/team-stats)
 
 my code is in the team_projects.js file.
+
+## Build a Library
+[Link](https://www.codecademy.com/courses/introduction-to-javascript/projects/build-a-library/)
+
+my code is in the library_project.js file.
