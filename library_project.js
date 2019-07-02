@@ -44,7 +44,7 @@ Methods:
 class Media {
     constructor(title) {
         this._title = title;
-        this._isCheckedOut = false;
+        this._isCheckedOut = true;
         this._ratings = [1,3,5];
     }
 
@@ -61,7 +61,7 @@ class Media {
   }
   toggleCheckOutStatus() {
     if (this._isCheckedOut) {
-      !this._isCheckedOut;
+      this._isCheckedOut = false;
     } else {
       this._isCheckedOut = true;
     }
@@ -111,10 +111,14 @@ class Movie extends Media {
     }
 }
 
+
+speed = new Movie('Speed', 'Jan de Bont', 116);
+console.log(speed);
+speed.toggleCheckOutStatus();
+console.log(speed._isCheckedOut);
+console.log(speed.ratings);
+speed.addRating(1);
+console.log(speed.getAverageRating());
 historyOfEverything = new Book('A Short History of Everything', 'Bill Bryson', 544);
-historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything);
-/*
-const book = new Media('The Mists of Avalon');
-console.log(book.getAverageRating());
-*/
+historyOfEverything.addRating(5);
