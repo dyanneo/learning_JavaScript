@@ -14,7 +14,7 @@ Methods:
     .toggleCheckOutStatus(), and 
     .addRating()
 
-    Movie
+Movie
 Properties: 
     director (string), 
     title (string), 
