@@ -12,6 +12,6 @@ my code is in the menu_project.js file.
 my code is in the team_projects.js file.
 
 ## Build a Library
-[Link]()
+[Link](https://www.codecademy.com/courses/introduction-to-javascript/projects/build-a-library/)
 
 my code is in the library_project.js file.
