@@ -27,10 +27,10 @@ Properties:
 */
 
 class School {
-    constructor(name) {
+    constructor(name, level, numberOfStudents) {
         this._name = name;
-        this._level = 'primary';
-        this._numberOfStudents = 0;
+        this._level = level;
+        this._numberOfStudents = numberOfStudents;
     }
     get name() {
         return this._name;
@@ -41,33 +41,49 @@ class School {
     get numberOfStudents() {
         return this._numberOfStudents;
     }
-    quickFacts() {
-
+    set numberOfStudents(num) {
+      if (typeof num === 'number') {
+        this._numberOfStudents = num;
+        } else {
+        return 'Invalid Input: numberOfStudents must be set to a Number.'
+      }
     }
-    static pickSubstituteTeacher() {
-
+    quickFacts() {
+			return `${this._name} educates ${this._numberOfStudents} at the ${this._level} school level.`
+    }
+    static pickSubstituteTeacher(substituteTeachers) {
+        console.log(substituteTeachers);
+        const picker = Math.floor(Math.random() * substituteTeachers.length);
+        console.log(picker);
+        return substituteTeachers[picker];
     }
 }
 class Primary extends School {
-    constructor(name) {
-        super(name);
-        this._pickupPolicy = '';
+    constructor(name, numberOfStudents, pickupPolicy) {
+        super(name, 'primary', numberOfStudents);
+        this._pickupPolicy = pickupPolicy;
     }
     get pickupPolicy() {
         return this._pickupPolicy;
     }
 }
 class Middle extends School {
-    constructor(name) {
-        super(name);
+    constructor(name, numberOfStudents) {
+        super(name, 'middle', numberOfStudents);
     }
 }
-class High extends School {
-    constructor(name) {
-        super(name);
-        this._sportsTeams = [];
+class HighSchool extends School {
+    constructor(name, numberOfStudents, sportsTeams) {
+        super(name, 'high', numberOfStudents);
+        this._sportsTeams = sportsTeams;
     }
     get sportsTeams() {
         return this._sportsTeams;
     }
 }
+const lorraineHansbury = new Primary('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.' );
+console.log(lorraineHansbury);
+console.log(lorraineHansbury.quickFacts());
+School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
+const alSmith = new HighSchool('Al E. Smith',415,['Baseball','Basketball','Volleyball','Track and Field']);
+console.log(alSmith.sportsTeams);
