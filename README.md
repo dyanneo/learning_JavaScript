@@ -15,3 +15,8 @@ my code is in the team_projects.js file.
 [Link](https://www.codecademy.com/courses/introduction-to-javascript/projects/build-a-library/)
 
 my code is in the library_project.js file.
+
+## School Catalog
+[Link](https://www.codecademy.com/courses/introduction-to-javascript/projects/school-catalog/)
+
+my code is in the school_project.js file.
